@@ -1,14 +1,13 @@
 import os
 
 MSGS = [
-    b"First message: Attack at dawn!",
-    b"Second message: Retreat at dusk!",
-    b"Third message: Hold the line!"
+    b"Send the final report to the dean before Friday noon.",
+    b"The exam for the course starts at eight in room D9.",
+    b"Lunch will be served in the cafeteria at 12:30 p.m.",
 ]
 
 def random(size=16):
-    with open("/dev/urandom", "rb") as f:
-        return f.read(size)
+    return os.urandom(size)
 
 def strxor(key, msg):
     return bytes(a ^ b for a, b in zip(key, msg))
